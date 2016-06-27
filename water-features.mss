@@ -20,7 +20,7 @@
       line-join: round;
       line-cap: round;
     }
-    #water-barriers-point[zoom >= 17] {
+    #water-barriers-point[zoom >= 15] {
       marker-fill: @dam;
       marker-line-color: @dam-line;
       marker-line-width: 1;
@@ -37,7 +37,7 @@
       line-width: 2;
       line-dasharray: 2,2;
     }
-    #water-barriers-point[zoom >= 17] {
+    #water-barriers-point[zoom >= 15] {
       marker-fill: @water-color;
       marker-line-color: @weir-line;
       marker-line-width: 1;
@@ -53,7 +53,7 @@
       line-color: @lock-gate-line;
       line-width: 2;
     }
-    #water-barriers-point[zoom >= 17] {
+    #water-barriers-point[zoom >= 15] {
       marker-fill: @lock-gate;
       marker-line-width: 0;
       marker-width: 8;
@@ -120,7 +120,7 @@
   [feature = 'waterway_weir'] {
     #text-poly[zoom >= 15],
     #text-line[zoom >= 15],
-    #text-point[zoom >= 17] {
+    #text-point[zoom >= 15] {
       text-name: "[name]";
       text-halo-radius: 1;
       text-halo-fill: rgba(255,255,255,0.6);

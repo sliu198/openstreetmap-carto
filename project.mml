@@ -319,6 +319,57 @@
       "advanced": {}
     },
     {
+      "name": "contours-10",
+      "id": "contours-10",
+      "srs": "+proj=latlong +datum=WGS84",
+      "Datasource": {
+        "extent": "-180,-85.05112877980659,180,85.05112877980659",
+        "table": "(SELECT geometry,height,height as name FROM contours WHERE height::integer % 10 = 0 AND height::integer % 50 != 0 AND height::integer % 100 != 0) AS \"contours-10\"",
+        "type": "postgis",
+        "dbname": "gis"
+      },
+      "extent": [
+        -180,
+        -85.05112877980659,
+        180,
+        85.05112877980659
+      ]
+    },
+    {
+      "name": "contours-50",
+      "id": "contours-50",
+      "srs": "+proj=latlong +datum=WGS84",
+      "Datasource": {
+        "extent": "-180,-85.05112877980659,180,85.05112877980659",
+        "table": "(SELECT geometry,height,height as name FROM contours WHERE height::integer % 50 = 0 AND height::integer % 100 != 0) AS \"contours-50\"",
+        "type": "postgis",
+        "dbname": "gis"
+      },
+      "extent": [
+        -180,
+        -85.05112877980659,
+        180,
+        85.05112877980659
+      ]
+    },
+    {
+      "name": "contours-100",
+      "id": "contours-100",
+      "srs": "+proj=latlong +datum=WGS84",
+      "Datasource": {
+        "extent": "-180,-85.05112877980659,180,85.05112877980659",
+        "table": "(SELECT geometry,height,height as name FROM contours WHERE height::integer % 100 = 0) AS \"contours-100\"",
+        "type": "postgis",
+        "dbname": "gis"
+      },
+      "extent": [
+        -180,
+        -85.05112877980659,
+        180,
+        85.05112877980659
+      ]
+    },
+    {
       "name": "water-lines",
       "srs-name": "900913",
       "geometry": "linestring",
@@ -2078,14 +2129,9 @@
     }
   },
   "metatile": 2,
-  "bounds": [
-    -180,
-    -85.05112877980659,
-    180,
-    85.05112877980659
-  ],
+  "maximum-extent": [629000,4111000,636000,4121000],
   "name": "OpenStreetMap Carto",
-  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "srs": "+init=epsg:32610",
   "Stylesheet": [
     "style.mss",
     "shapefiles.mss",
@@ -2102,7 +2148,8 @@
     "ferry-routes.mss",
     "aerialways.mss",
     "admin.mss",
-    "addressing.mss"
+    "addressing.mss",
+    "contours.mss"
   ],
   "minzoom": 0,
   "maxzoom": 22,
